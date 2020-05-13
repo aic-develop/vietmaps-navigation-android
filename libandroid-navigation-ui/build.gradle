@@ -67,7 +67,9 @@ dependencies {
   implementation dependenciesList.mapboxMapSdk, {
     exclude group: 'com.mapbox.mapboxsdk', module: 'mapbox-sdk-geojson'
   }
-  implementation dependenciesList.mapboxAnnotationPlugin
+  implementation dependenciesList.mapboxAnnotationPlugin, {
+    exclude group: 'com.mapbox.mapboxsdk', module: 'mapbox-android-sdk'
+  }
 
   // Support libraries
   implementation dependenciesList.supportDesign

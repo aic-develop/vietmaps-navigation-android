@@ -38,8 +38,8 @@ android {
     minSdkVersion androidVersions.minSdkVersion
     targetSdkVersion androidVersions.targetSdkVersion
     multiDexEnabled true
-    versionCode gitVersionCode
-    versionName gitVersionName
+    versionCode 1
+    versionName "1.0.0"
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     vectorDrawables.useSupportLibrary = true
     buildConfigField "String", "GIT_HASH", "\"${getGitHash()}\""

@@ -306,9 +306,10 @@ internal object NavigationTelemetry : NavigationMetricListener {
     }
 
     private fun validateAccessToken(accessToken: String) {
-        if (accessToken.isEmpty() || !accessToken.toLowerCase(Locale.US).startsWith("pk.") && !accessToken.toLowerCase(
-                Locale.US
-            ).startsWith("sk.")
+        if (accessToken.isEmpty() ||
+                !accessToken.toLowerCase(Locale.US).startsWith("pk.")
+                && !accessToken.toLowerCase(Locale.US).startsWith("sk.")
+                && !accessToken.toLowerCase(Locale.US).startsWith("ey")
         ) {
             throw NavigationException("A valid access token must be passed in when first initializing MapboxNavigation")
         }

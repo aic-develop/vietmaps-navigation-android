@@ -45,7 +45,7 @@ class RouteUrl(
          *
          * @since 1.0
          */
-        const val PROFILE_DEFAULT_USER = "mapbox"
+        const val PROFILE_DEFAULT_USER = ""
         /**
          * For car and motorcycle routing. This profile factors in current and historic traffic
          * conditions to avoid slowdowns.

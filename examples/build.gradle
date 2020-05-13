@@ -38,8 +38,8 @@ android {
         minSdkVersion androidVersions.minSdkVersion
         targetSdkVersion androidVersions.targetSdkVersion
         multiDexEnabled true
-        versionCode gitVersionCode
-        versionName gitVersionName
+        versionCode 1
+        versionName "1.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
         buildConfigField "String", "GIT_HASH", "\"${getGitHash()}\""
@@ -80,6 +80,13 @@ android {
         serviceAccountCredentials = playConfigs.defaultAccountConfig.serviceAccountCredentials
         track = System.getenv("GOOGLE_PLAY_TRACK") ?: "internal"
     }
+
+    configurations {
+        all {
+            exclude module: 'mapbox-sdk-geojson'
+            exclude module: 'mapbox-sdk-turf'
+        }
+    }
 }
 
 dependencies {
@@ -104,7 +111,10 @@ dependencies {
 
     // Mapbox Navigation SDK
     implementation project(':libandroid-navigation-ui')
-    implementation dependenciesList.mapboxAnnotationPlugin
+    implementation dependenciesList.mapboxMapSdk
+    implementation dependenciesList.mapboxAnnotationPlugin, {
+        exclude group: 'com.mapbox.mapboxsdk', module: 'mapbox-android-sdk'
+    }
 
     // Support libraries
     implementation dependenciesList.supportAppcompatV7

@@ -8,7 +8,7 @@ ext {
   ]
 
   version = [
-      mapboxMapSdk              : '8.5.1',
+      mapboxMapSdk              : '1.0.0',
       mapboxSdkServices         : '1.0.0',
       mapboxSdkDirectionsModels : '1.0.0',
       mapboxEvents              : '4.5.1',
@@ -58,7 +58,7 @@ ext {
   ]
   dependenciesList = [
       // mapbox
-      mapboxMapSdk              : "com.mapbox.mapboxsdk:mapbox-android-sdk:${version.mapboxMapSdk}",
+      mapboxMapSdk              : "com.vietmaps.vietmapssdk:vietmaps-android-sdk:${version.mapboxMapSdk}",
       mapboxSdkServices         : "com.vietmaps.vietmapssdk:vietmaps-sdk-services:${version.mapboxSdkServices}",
       mapboxSdkGeoJSON          : "com.vietmaps.vietmapssdk:vietmaps-sdk-geojson:${version.mapboxSdkServices}",
       mapboxSdkTurf             : "com.vietmaps.vietmapssdk:vietmaps-sdk-turf:${version.mapboxSdkServices}",

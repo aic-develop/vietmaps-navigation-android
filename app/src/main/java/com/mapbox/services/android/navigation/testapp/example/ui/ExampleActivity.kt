@@ -121,7 +121,7 @@ class ExampleActivity : HistoryActivity(), ExampleView, MetricsObserver {
 
     override fun onMapReady(mapboxMap: MapboxMap) {
         Timber.e("Map is ready")
-        mapboxMap.setStyle(Style.Builder().fromUrl(getString(R.string.navigation_guidance_day))) {
+        mapboxMap.setStyle(Style.Builder().fromUrl(getString(R.string.vietmaps_default))) {
             map = NavigationMapboxMap(mapView, mapboxMap)
             map?.setOnRouteSelectionChangeListener(this)
             map?.updateLocationLayerRenderMode(RenderMode.NORMAL)

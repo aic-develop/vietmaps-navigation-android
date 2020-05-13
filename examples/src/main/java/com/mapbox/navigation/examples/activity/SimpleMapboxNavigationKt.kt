@@ -72,7 +72,7 @@ class SimpleMapboxNavigationKt : AppCompatActivity(), OnMapReadyCallback {
             false
         }
 
-        mapboxMap.setStyle(Style.MAPBOX_STREETS) {
+        mapboxMap.setStyle(Style.VIETMAPS_DEFAULT) {
             locationComponent = mapboxMap.locationComponent.apply {
                 activateLocationComponent(
                     LocationComponentActivationOptions.builder(this@SimpleMapboxNavigationKt, it)

@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.jaredsburrows.license'
-apply plugin: 'com.mapbox.android.sdk.versions'
+//apply plugin: 'com.mapbox.android.sdk.versions'
 apply from: "${rootDir}/gradle/ktlint.gradle"
 
 android {
@@ -25,6 +25,10 @@ android {
 
   configurations {
     javadocDeps
+    all {
+      exclude module: 'mapbox-sdk-geojson'
+      exclude module: 'mapbox-sdk-turf'
+    }
   }
 
   buildTypes {
@@ -60,7 +64,9 @@ dependencies {
   api project(':libandroid-navigation')
 
   // Mapbox Maps SDK
-  implementation dependenciesList.mapboxMapSdk
+  implementation dependenciesList.mapboxMapSdk, {
+    exclude group: 'com.mapbox.mapboxsdk', module: 'mapbox-sdk-geojson'
+  }
   implementation dependenciesList.mapboxAnnotationPlugin
 
   // Support libraries

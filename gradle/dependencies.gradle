@@ -9,8 +9,8 @@ ext {
 
   version = [
       mapboxMapSdk              : '8.5.1',
-      mapboxSdkServices         : '5.1.0-beta.1',
-      mapboxSdkDirectionsModels : '5.1.0-beta.1',
+      mapboxSdkServices         : '1.0.0',
+      mapboxSdkDirectionsModels : '1.0.0',
       mapboxEvents              : '4.5.1',
       mapboxCore                : '1.3.0',
       mapboxNavigator           : '9.0.2',
@@ -59,10 +59,10 @@ ext {
   dependenciesList = [
       // mapbox
       mapboxMapSdk              : "com.mapbox.mapboxsdk:mapbox-android-sdk:${version.mapboxMapSdk}",
-      mapboxSdkServices         : "com.mapbox.mapboxsdk:mapbox-sdk-services:${version.mapboxSdkServices}",
-      mapboxSdkGeoJSON          : "com.mapbox.mapboxsdk:mapbox-sdk-geojson:${version.mapboxSdkServices}",
-      mapboxSdkTurf             : "com.mapbox.mapboxsdk:mapbox-sdk-turf:${version.mapboxSdkServices}",
-      mapboxSdkDirectionsModels : "com.mapbox.mapboxsdk:mapbox-sdk-directions-models:${version.mapboxSdkDirectionsModels}",
+      mapboxSdkServices         : "com.vietmaps.vietmapssdk:vietmaps-sdk-services:${version.mapboxSdkServices}",
+      mapboxSdkGeoJSON          : "com.vietmaps.vietmapssdk:vietmaps-sdk-geojson:${version.mapboxSdkServices}",
+      mapboxSdkTurf             : "com.vietmaps.vietmapssdk:vietmaps-sdk-turf:${version.mapboxSdkServices}",
+      mapboxSdkDirectionsModels : "com.vietmaps.vietmapssdk:vietmaps-sdk-directions-models:${version.mapboxSdkDirectionsModels}",
       mapboxEvents              : "com.mapbox.mapboxsdk:mapbox-android-telemetry:${version.mapboxEvents}",
       mapboxCore                : "com.mapbox.mapboxsdk:mapbox-android-core:${version.mapboxCore}",
       mapboxNavigator           : "com.mapbox.navigator:mapbox-navigation-native:${version.mapboxNavigator}",

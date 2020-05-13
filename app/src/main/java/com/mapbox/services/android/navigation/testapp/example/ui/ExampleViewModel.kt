@@ -186,11 +186,11 @@ class ExampleViewModel(application: Application) : AndroidViewModel(application)
     }
 
     private fun normalizeForTraffic(string: String): String {
-        var normalizedString = string.toLowerCase()
-        if (string.equals("driving")) {
-            return "driving-traffic"
+        val normalizedString = string.toLowerCase()
+        return if (string == "driving-traffic") {
+            "driving"
         } else {
-            return normalizedString
+            normalizedString
         }
     }
 

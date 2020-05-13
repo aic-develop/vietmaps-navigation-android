@@ -80,6 +80,13 @@ android {
     serviceAccountCredentials = playConfigs.defaultAccountConfig.serviceAccountCredentials
     track = System.getenv("GOOGLE_PLAY_TRACK") ?: "internal"
   }
+
+  configurations {
+    all {
+      exclude module: 'mapbox-sdk-geojson'
+      exclude module: 'mapbox-sdk-turf'
+    }
+  }
 }
 
 dependencies {
@@ -92,8 +99,13 @@ dependencies {
 
   // Mapbox Navigation SDK
   implementation project(':libandroid-navigation-ui')
-  implementation dependenciesList.mapboxMapSdk
-  implementation dependenciesList.mapboxSearchSdk
+  implementation dependenciesList.mapboxMapSdk, {
+    exclude group: 'com.mapbox.mapboxsdk', module: 'mapbox-sdk-geojson'
+  }
+  implementation dependenciesList.mapboxSearchSdk, {
+    exclude group: 'com.mapbox.mapboxsdk', module: 'mapbox-sdk-services'
+    exclude group: 'com.mapbox.mapboxsdk', module: 'mapbox-sdk-geojson'
+  }
   implementation dependenciesList.mapboxCrashMonitor
 
   // Support libraries

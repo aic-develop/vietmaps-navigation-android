@@ -11,9 +11,9 @@ publishing {
     publications {
         MapboxNavigationPublication(MavenPublication) {
             from components.android
-            groupId this.group
-            artifactId project.ext.mapboxArtifactId
-            version this.version
+            groupId "com.vietmaps.vietmapssdk"
+            artifactId "vietmaps-android-navigation"
+            version "1.0.0"
 
             afterEvaluate {
                 artifact(androidSourcesJar)
